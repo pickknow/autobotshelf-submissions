@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Browse recipes
+    url: https://autobotshelf.com/recipes/
+    about: See if someone has already made a bot for your chore.

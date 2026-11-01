@@ -1,0 +1,57 @@
+name: Suggest a recipe
+description: Tell us about a chore you'd like a bot for, or an automation you've already built.
+title: '[Idea]: '
+labels: ['recipe idea']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Every recipe on AutoBotShelf is tested end to end before it's published, so it may take a while to appear. Add a 👍 to other people's ideas you want too; we build the most-wanted ones first.
+  - type: textarea
+    id: chore
+    attributes:
+      label: What do you want to stop doing by hand?
+      description: Describe the chore in your own words, and how often you do it.
+      placeholder: Every Friday I copy my sales from Etsy into a spreadsheet and email it to my accountant.
+    validations:
+      required: true
+  - type: input
+    id: apps
+    attributes:
+      label: Which apps or websites are involved?
+      placeholder: Etsy, Google Sheets, Gmail
+    validations:
+      required: true
+  - type: dropdown
+    id: budget
+    attributes:
+      label: What can you spend on it?
+      options:
+        - It needs to be free
+        - A few dollars a month is fine
+        - I'd pay for a tool that does it well
+    validations:
+      required: true
+  - type: dropdown
+    id: skill
+    attributes:
+      label: How do you want to build it?
+      options:
+        - By hand, no code
+        - I can paste in a short script
+        - I'd hand it to an AI coding agent
+        - Any of these
+    validations:
+      required: true
+  - type: textarea
+    id: built
+    attributes:
+      label: Already built something like this?
+      description: Optional. If you've automated it, tell us how. We credit you if your version becomes a recipe.
+  - type: checkboxes
+    id: review
+    attributes:
+      label: Before you submit
+      options:
+        - label: I didn't include passwords, API keys or personal data.
+          required: true

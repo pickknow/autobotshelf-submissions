@@ -1,0 +1,47 @@
+name: Report a problem with a recipe
+description: A step didn't work, a link is broken, or a price or free plan has changed.
+title: '[Problem]: '
+labels: ['recipe problem']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for telling us. We retest the recipe and update its label on the site, so other people know whether it still works.
+  - type: input
+    id: page
+    attributes:
+      label: Recipe page
+      placeholder: https://autobotshelf.com/recipes/...
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong?
+      options:
+        - A step doesn't work any more
+        - A link is broken
+        - The price or free plan has changed
+        - The agent prompt didn't work
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: step
+    attributes:
+      label: Which step?
+      description: Optional. The step number or title, if it's about a step.
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you saw instead. Paste any error message.
+    validations:
+      required: true
+  - type: checkboxes
+    id: review
+    attributes:
+      label: Before you submit
+      options:
+        - label: I removed passwords, API keys and personal data from anything I pasted.
+          required: true
